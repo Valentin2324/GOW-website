@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/598f10f962.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>God of War: RAGNARÖK</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <section class="header4">
+      <nav>
+        <a href="index.html"></a>
+        <img src="images/GoW.jpg" class="logo" />
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-xmark" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="story.html">STORY</a></li>
+            <li><a href="combat.html">COMBAT</a></li>
+            <li><a href="videos.html">VIDEOS</a></li>
+            <li>
+              <a
+                href="https://www.playstation.com/en-us/games/god-of-war-ragnarok/"
+                >THE GAME</a
+              >
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>Pro GAMEPLAY-Videos</h1>
+
+        <div class="hero-btn">
+          <a href="#video"><span></span>PLAY</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section id="video">
+      <div class="video-text">
+        <p></p>
+        <h1></h1>
+      </div>
+      <div class="raw">
+        <div class="cql">
+          <div class="thumbnail-img">
+            <img src="images/thor-vs-kratos.jpg" width="100%" />
+            <img
+              src="images/play.png"
+              class="play-btn"
+              onclick="playVideo('videos/Kratos Vs Thor All Fight Scenes 4K - God Of War Ragnarok - 1080.mp4')"
+              />
+          </div>
+        </div>
+        <div class="cql">
+          <div class="thumbnail-img">
+            <img src="images/kratos-btn.jpg" width="100%" />
+            <img
+              src="images/play.png"
+              class="play-btn"
+              onclick="playVideo('videos/God of War Ragnarok  - Best Combos - 1080.mp4')"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="video-player" id="videoPlayer">
+        <video width="100%" controls autoplay id="myVideo">
+          <source
+            src="videos/God of War Ragnarok  - Best Combos - 1080.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <img src="images/close.png" class="close-btn" onclick="stopVideo()" />
+      </div>
+
+      <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myVideo = document.getElementById("myVideo");
+        var myAudio = document.getElementById("myAudio");
+
+        function stopVideo() {
+          videoPlayer.style.display = "none";
+        }
+
+        myVideo.addEventListener("ended", function () {
+          myAudio.pause();
+        });
+
+        function playVideo(file) {
+          myVideo.src = file;
+          videoPlayer.style.display = "block";
+        }
+      </script>
+    </section>
+
+    <!-- Footer -->
+
+    <section id="footer">
+      <img src="images/logo.jpg" class="footer-img" />
+      <div class="title-text">
+        <p>SOCIAL LINKS</p>
+        <h1>DEVELOPERS</h1>
+      </div>
+      <div class="footer-row">
+        <div class="footer-left">
+          <h1>Sony Interactive Entertainment</h1>
+          <p>
+            <i class="fa fa-building"></i>© 2023 Sony Interactive Entertainment
+            LLC All content, games titles, trade names and/or trade dress,
+            trademarks, artwork and associated imagery are trademarks and/or
+            copyright material of their respective owners. All rights reserved
+          </p>
+        </div>
+        <div class="footer-right">
+          <h1>PlayStation</h1>
+          <p>
+            God of War Ragnarök - PS5 and PS4 Games<i class="fa fa-gamepad"></i>
+          </p>
+          <p>
+            God of War is a registered trademark of Sony Interactive
+            Entertainment LLC and related companies in the U.S. and other
+            countries. “PlayStation Family Mark”, “PlayStation”<i
+              class="fa fa-paper-plane"
+            ></i>
+          </p>
+        </div>
+      </div>
+
+      <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+      <div class="social-links">
+        <a href="https://www.facebook.com/playstation/"
+          ><i class="fa fa-facebook"></i
+        ></a>
+        <a href="https://www.instagram.com/PlayStation/"
+          ><i class="fa fa-instagram"></i
+        ></a>
+        <a href="https://twitter.com/PlayStationEU"
+          ><i class="fa fa-twitter"></i
+        ></a>
+        <a href="https://www.youtube.com/@PlayStation/videos>"
+          ><i class="fa fa-youtube-play"></i
+        ></a>
+      </div>
+      <div class="heart">
+        <p>Made With <i class="fa fa-star"></i> by Val</p>
+      </div>
+    </section>
+
+    <!-- JavaScript -->
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+
+      window.addEventListener("scroll", function () {
+        var backToTopButton = document.querySelector(".back-to-top");
+        if (window.pageYOffset > 500) {
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      });
+
+      var backToTopButton = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 500) {
+          backToTopButton.classList.add("show");
+        } else {
+          backToTopButton.classList.remove("show");
+        }
+      });
+
+      backToTopButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
